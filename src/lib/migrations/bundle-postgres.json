@@ -368,6 +368,14 @@
         "CREATE TABLE \"message_action_undo_claims\" (\n\t\"nonce\" text PRIMARY KEY NOT NULL,\n\t\"user_id\" text NOT NULL,\n\t\"expires_at\" bigint NOT NULL\n);",
         "CREATE INDEX \"message_action_undo_claims_expires_idx\" ON \"message_action_undo_claims\" USING btree (\"expires_at\");"
       ]
+    },
+    {
+      "name": "0013_masked_aliases.sql",
+      "statements": [
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"label\" text;",
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"enabled\" boolean DEFAULT true NOT NULL;",
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"masked\" boolean DEFAULT false NOT NULL;"
+      ]
     }
   ]
 }

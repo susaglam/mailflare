@@ -61,36 +61,15 @@
     {
       "idx": 8,
       "version": "5",
-      "when": 1793280379891,
-      "tag": "0008_conversation_notes",
+      "when": 1794143012708,
+      "tag": "0008_masked_aliases",
       "breakpoints": true
     },
     {
       "idx": 9,
       "version": "5",
-      "when": 1793280380891,
-      "tag": "0009_calendar_invitations",
-      "breakpoints": true
-    },
-    {
-      "idx": 10,
-      "version": "5",
-      "when": 1793280381891,
-      "tag": "0010_booking_confirmation_templates",
-      "breakpoints": true
-    },
-    {
-      "idx": 11,
-      "version": "5",
-      "when": 1793280382891,
-      "tag": "0011_message_invite_response",
-      "breakpoints": true
-    },
-    {
-      "idx": 12,
-      "version": "5",
-      "when": 1794516478573,
-      "tag": "0012_message_action_undo_claims",
+      "when": 1794143012709,
+      "tag": "0013_masked_aliases",
       "breakpoints": true
     }
   ]
