@@ -26,3 +26,5 @@ export type ToolbarCommand = {
 	icon: React.ComponentType<{ className?: string }>;
 	value?: string;
 };
+
+export type TextDirection = "ltr" | "rtl";

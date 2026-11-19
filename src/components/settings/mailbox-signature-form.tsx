@@ -57,6 +57,7 @@ export function MailboxSignatureForm() {
 				<Label htmlFor="mailboxSignature">{t("settings.signature.for", { address })}</Label>
 				<Textarea
 					id="mailboxSignature"
+					dir="auto"
 					value={signature}
 					onChange={(event) => setSignature(event.target.value)}
 					placeholder={t("settings.signature.placeholder")}

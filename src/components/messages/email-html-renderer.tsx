@@ -57,6 +57,8 @@ export function EmailHtmlRenderer({ html, className, dense = false, preserveLead
 		base.textContent = `${BASE_STYLE}\n${prepared.rootTag} { display:block; font:14px/1.5 Arial,sans-serif; color:#202124; background:#fff; color-scheme:light; }\n${prepared.bodyTag} { display:block; }\n:host(.mf-dark) ${prepared.rootTag} { background:transparent; }\n:host(.mf-dense) ${prepared.rootTag} { background:transparent; }`;
 		const content = document.createElement("template");
 		content.innerHTML = collapseQuotedEmailHtml(prepared.html, preserveLeadingQuote, quoteToggleLabel) ?? "";
+		const mailRoot = content.content.querySelector(prepared.rootTag);
+		if (mailRoot && !mailRoot.hasAttribute("dir")) mailRoot.setAttribute("dir", "auto");
 		root.replaceChildren(base, content.content);
 		const mailBody = root.querySelector(prepared.bodyTag);
 		// An LTR scroller cannot reach left-side overflow from an RTL email.

@@ -404,6 +404,12 @@
         "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"enabled\" boolean DEFAULT true NOT NULL;",
         "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"masked\" boolean DEFAULT false NOT NULL;"
       ]
+    },
+    {
+      "name": "0016_add_accent_color.sql",
+      "statements": [
+        "ALTER TABLE \"app_settings\" ADD COLUMN \"accent_color\" text;"
+      ]
     }
   ]
 }

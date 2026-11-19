@@ -853,6 +853,12 @@
         "ALTER TABLE `mailbox_aliases` ADD `enabled` integer DEFAULT true NOT NULL;",
         "ALTER TABLE `mailbox_aliases` ADD `masked` integer DEFAULT false NOT NULL;"
       ]
+    },
+    {
+      "name": "0092_add_accent_color.sql",
+      "statements": [
+        "ALTER TABLE `app_settings` ADD `accent_color` text;"
+      ]
     }
   ]
 }
