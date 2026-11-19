@@ -1,13 +1,12 @@
 import assert from "node:assert/strict";
 import { mkdtempSync, rmSync } from "node:fs";
-import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import test, { after } from "node:test";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "esbuild";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const outDir = mkdtempSync(join(tmpdir(), "mailflare-text-direction-"));
+const outDir = mkdtempSync(join(root, "tests", ".tmp-text-direction-"));
 after(() => rmSync(outDir, { recursive: true, force: true }));
 
 await build({
@@ -15,6 +14,7 @@ await build({
 	outfile: join(outDir, "rich-text-utils.mjs"),
 	bundle: true,
 	platform: "node",
+	packages: "external",
 	format: "esm",
 	target: "node22",
 	logLevel: "silent",
