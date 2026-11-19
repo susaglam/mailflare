@@ -17,7 +17,6 @@ const mocks = {
 	"@/db": "export function getDb(){return globalThis.maskedAliasDb}",
 	"@/lib/cloudflare": "export function getEnv(){return {}}",
 	"@/lib/auth/cookies": "export async function requireUser(){return globalThis.maskedAliasUser}",
-	"@/lib/mailboxes/access": "export async function getMailboxAccessLevel(){return globalThis.maskedAliasAccess} export async function listAccessibleMailboxes(){return []}",
 	"@/lib/mailboxes/settings-access": "export async function getMailboxSettingsAccess(){return {canManage:true}}",
 	"@/lib/cloudflare-api": `export async function ensureEmailRoutingRuleToWorker(env,zoneId,address){(globalThis.ensuredRoutes??=[]).push(address)}
 		export async function deleteEmailRoutingRuleForAddress(env,zoneId,address){(globalThis.deletedRoutes??=[]).push(address)}`,
@@ -44,7 +43,7 @@ await build({
 	plugins: [{
 		name: "test-mocks",
 		setup(builder) {
-			builder.onResolve({ filter: /^(next\/server|@\/db|@\/lib\/(cloudflare|auth\/cookies|mailboxes\/access|mailboxes\/settings-access|cloudflare-api))$/ }, (args) => ({ path: args.path, namespace: "mock" }));
+			builder.onResolve({ filter: /^(next\/server|@\/db|@\/lib\/(cloudflare|auth\/cookies|mailboxes\/settings-access|cloudflare-api))$/ }, (args) => ({ path: args.path, namespace: "mock" }));
 			builder.onLoad({ filter: /.*/, namespace: "mock" }, (args) => ({ contents: mocks[args.path], loader: "js" }));
 		},
 	}],
@@ -80,7 +79,6 @@ function setup() {
 	});
 	globalThis.maskedAliasDb = db;
 	globalThis.maskedAliasUser = { id: "u-owner", role: "admin" };
-	globalThis.maskedAliasAccess = { canSendAs: true, canSendOnBehalf: true };
 	globalThis.ensuredRoutes = [];
 	globalThis.deletedRoutes = [];
 
@@ -192,6 +190,29 @@ test("a disabled alias cannot be used as the sender", async () => {
 		sender.getAuthorizedSenderAddress({}, { userId: "u-owner", mailboxId: "m1", from: "dead@example.test" }),
 		/Sender address does not match/,
 	);
+});
+
+test("shared mailbox delegates use their assigned role when sending from a masked alias", async () => {
+	sqlite.exec(`
+		INSERT INTO users(id, name, email, disabled) VALUES ('u-delegate', 'Dana', 'dana@example.test', 0);
+		INSERT INTO license_settings(id, plan, state) VALUES ('default', 'team', 'active');
+		INSERT INTO mailboxes(id, user_id, domain_id, local_part, display_name, type, disabled)
+			VALUES ('m-team', 'u-owner', 'd1', 'team', 'Team mailbox', 'shared', 0);
+		INSERT INTO mailbox_aliases(id, mailbox_id, domain_id, local_part, label, enabled, masked)
+			VALUES ('a-team', 'm-team', 'd1', 'orders', 'Purchasing', 1, 1);
+	`);
+	const send = (mailboxId = "m-team", from = "orders@example.test") =>
+		sender.getAuthorizedSenderAddress({}, { userId: "u-delegate", mailboxId, from });
+	await assert.rejects(send(), /permission to send/);
+	await assert.rejects(send("m1", "shop@example.test"), /permission to send/);
+	sqlite.exec("INSERT INTO mailbox_access(id, user_id, mailbox_id, permission) VALUES ('grant', 'u-delegate', 'm-team', 'read_only')");
+	await assert.rejects(send(), /permission to send/);
+	sqlite.exec("UPDATE mailbox_access SET permission = 'send_on_behalf' WHERE id = 'grant'");
+	assert.equal((await send()).fromAddr, '"Dana on behalf of Purchasing" <orders@example.test>');
+	sqlite.exec("UPDATE mailbox_access SET permission = 'send_as' WHERE id = 'grant'");
+	assert.equal((await send()).fromAddr, '"Purchasing" <orders@example.test>');
+	sqlite.exec("UPDATE mailbox_aliases SET enabled = 0 WHERE id = 'a-team'");
+	await assert.rejects(send(), /Sender address does not match/);
 });
 
 test("POST generate creates a random masked enabled alias and its routing rule", async () => {
