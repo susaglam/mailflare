@@ -1123,6 +1123,26 @@
           "primaryKey": false,
           "notNull": false
         },
+        "auto_update": {
+          "name": "auto_update",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "auto_update_channel": {
+          "name": "auto_update_channel",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'release'"
+        },
+        "auto_update_dispatched_version": {
+          "name": "auto_update_dispatched_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "updated_at": {
           "name": "updated_at",
           "type": "bigint",
