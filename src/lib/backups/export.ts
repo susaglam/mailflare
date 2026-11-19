@@ -11,7 +11,7 @@ export const BACKUP_TABLES: DatabaseBackupTable[] = ["users", "user_compose_pref
  * optional here and are filled in as empty on restore.
  */
 /** Added by migrations 0068 and later; databases that have not applied them yet back up and restore without them. */
-const LATER_MIGRATION_TABLES: DatabaseBackupTable[] = ["domain_tracking_hosts", "message_tracking", "message_opens", "follow_ups", "conversation_notes", "user_compose_preferences", "booking_confirmation_templates"];
+const LATER_MIGRATION_TABLES: DatabaseBackupTable[] = ["domain_tracking_hosts", "message_tracking", "message_opens", "follow_ups", "conversation_notes", "user_compose_preferences", "booking_confirmation_templates", "calendar_event_overrides", "calendar_occurrence_responses", "calendar_invite_tombstones"];
 const REQUIRED_BACKUP_TABLES: DatabaseBackupTable[] = ["users", "domains", "mailboxes", "mailbox_access", "contacts", "folders", "api_keys", "messages", "message_attachments", "outbound_jobs", "routing_rules", "webhooks", "webhook_deliveries", "sessions", "audit_logs", "backup_settings", "backups", "app_settings", "license_settings"];
 const INSERT_BATCH_SIZE = 50;
 
@@ -128,6 +128,15 @@ export async function restoreDatabaseRecords(db: D1Database, content: ArrayBuffe
 	const laterTableNames = LATER_MIGRATION_TABLES.filter((table) => existing.has(table));
 	const unmigrated = LATER_MIGRATION_TABLES.filter((table) => document.tables[table]?.length && !laterTableNames.includes(table));
 	if (unmigrated.length) throw new Error(`Apply pending database migrations before restoring ${unmigrated.join(", ")}.`);
+	// These tables gained columns in later releases. Refuse incompatible data before deleting live records.
+	for (const table of ["calendar_events", "mailbox_aliases", "app_settings"] as const) {
+		const rows = document.tables[table] ?? [];
+		if (!rows.length) continue;
+		const columns = await listColumnNames(db, table);
+		if (rows.some((row) => Object.keys(row).some((column) => !columns.has(column)))) {
+			throw new Error(`Apply pending database migrations before restoring ${table}.`);
+		}
+	}
 	const restoreTables = BACKUP_TABLES.filter((table) => (table !== "shared_attachment_links" || sharedLinksTable) && (table !== "booking_events" || bookingTable) && (table !== "passkey_credentials" || passkeyTable) && (!table.startsWith("drive_") || driveTableNames.includes(table)) && (!LATER_MIGRATION_TABLES.includes(table) || laterTableNames.includes(table)));
 	const userColumns = await listColumnNames(db, "users");
 	const bookingColumns = bookingTable ? await listColumnNames(db, "booking_events") : null;

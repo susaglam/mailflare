@@ -1058,6 +1058,29 @@
           "notNull": false,
           "autoincrement": false
         },
+        "auto_update": {
+          "name": "auto_update",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
+        },
+        "auto_update_channel": {
+          "name": "auto_update_channel",
+          "type": "varchar(64)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'release'"
+        },
+        "auto_update_dispatched_version": {
+          "name": "auto_update_dispatched_version",
+          "type": "longtext",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "updated_at": {
           "name": "updated_at",
           "type": "bigint",

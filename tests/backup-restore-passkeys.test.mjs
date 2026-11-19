@@ -56,10 +56,11 @@ function d1(sqlite) {
 	};
 }
 
-function database() {
+function database(stopBefore) {
 	const sqlite = new Database(":memory:");
 	sqlite.pragma("foreign_keys = ON");
 	for (const migration of migrations) {
+		if (migration.name === stopBefore) break;
 		for (const statement of migration.statements) sqlite.exec(statement);
 	}
 	return sqlite;
@@ -104,4 +105,36 @@ test("a newer backup restores into a database that has the passkey table but not
 	await restoreDatabaseRecords(d1(target), backup.buffer.slice(backup.byteOffset, backup.byteOffset + backup.byteLength));
 	assert.equal(target.prepare("SELECT COUNT(*) AS count FROM passkey_credentials").get().count, 1);
 	assert.equal(target.prepare("PRAGMA table_info(passkey_credentials)").all().some((column) => column.name === "aaguid"), false);
+});
+
+test("calendar backups restore before and after the invite migration and protect an older target", async (t) => {
+	const before = database("0090_calendar_invite_complete.sql");
+	const after = database();
+	t.after(() => { before.close(); after.close(); });
+	addUser(before);
+	before.exec("INSERT INTO calendar_events (id, user_id, title, starts_at, ends_at, created_at, updated_at) VALUES ('event', 'u1', 'Meeting', 1, 2, 1, 1)");
+
+	const legacy = JSON.parse(new TextDecoder().decode(await exportDatabaseRecords(d1(before))));
+	for (const table of ["calendar_event_overrides", "calendar_occurrence_responses", "calendar_invite_tombstones"]) {
+		assert.deepEqual(legacy.tables[table], []);
+		// A backup written by the previous release does not mention the table.
+		delete legacy.tables[table];
+		legacy.includedTables = legacy.includedTables.filter((name) => name !== table);
+	}
+	const oldContent = new TextEncoder().encode(JSON.stringify(legacy)).buffer;
+	await restoreDatabaseRecords(d1(before), oldContent);
+	await restoreDatabaseRecords(d1(after), oldContent);
+	assert.equal(after.prepare("SELECT repeat_interval FROM calendar_events").get().repeat_interval, 1);
+
+	after.exec("UPDATE calendar_events SET repeat_interval = 3");
+	const updated = await exportDatabaseRecords(d1(after));
+	await assert.rejects(restoreDatabaseRecords(d1(before), updated.buffer), /Apply pending database migrations before restoring calendar_events/);
+	assert.equal(before.prepare("SELECT title FROM calendar_events").get().title, "Meeting");
+
+	after.exec("INSERT INTO calendar_event_overrides (id, event_id, occurrence_ms, starts_at, ends_at, created_at, updated_at) VALUES ('override', 'event', 1, 2, 3, 1, 1)");
+	const withOverride = await exportDatabaseRecords(d1(after));
+	await assert.rejects(restoreDatabaseRecords(d1(before), withOverride.buffer), /before restoring calendar_event_overrides/);
+	await restoreDatabaseRecords(d1(after), withOverride.buffer);
+	assert.equal(after.prepare("SELECT event_id FROM calendar_event_overrides").get().event_id, "event");
+	assert.equal(after.prepare("SELECT repeat_interval FROM calendar_events").get().repeat_interval, 3);
 });
