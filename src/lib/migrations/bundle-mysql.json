@@ -369,6 +369,14 @@
         "CREATE INDEX `calendar_invite_tombstones_user_idx` ON `calendar_invite_tombstones` (`user_id`);",
         "CREATE INDEX `calendar_occurrence_responses_event_idx` ON `calendar_occurrence_responses` (`event_id`);"
       ]
+    },
+    {
+      "name": "0015_masked_aliases.sql",
+      "statements": [
+        "ALTER TABLE `mailbox_aliases` ADD `label` longtext;",
+        "ALTER TABLE `mailbox_aliases` ADD `enabled` boolean NOT NULL DEFAULT true;",
+        "ALTER TABLE `mailbox_aliases` ADD `masked` boolean NOT NULL DEFAULT false;"
+      ]
     }
   ]
 }

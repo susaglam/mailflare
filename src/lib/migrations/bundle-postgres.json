@@ -396,6 +396,14 @@
         "CREATE UNIQUE INDEX \"calendar_occurrence_responses_event_occurrence_guest_idx\" ON \"calendar_occurrence_responses\" USING btree (\"event_id\",\"occurrence_ms\",\"guest\");",
         "CREATE INDEX \"calendar_occurrence_responses_event_idx\" ON \"calendar_occurrence_responses\" USING btree (\"event_id\");"
       ]
+    },
+    {
+      "name": "0015_masked_aliases.sql",
+      "statements": [
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"label\" text;",
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"enabled\" boolean DEFAULT true NOT NULL;",
+        "ALTER TABLE \"mailbox_aliases\" ADD COLUMN \"masked\" boolean DEFAULT false NOT NULL;"
+      ]
     }
   ]
 }
