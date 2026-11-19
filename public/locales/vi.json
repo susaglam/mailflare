@@ -298,6 +298,8 @@
 	"compose.trackOpensOn": "Bật xác nhận đã đọc: bạn sẽ thấy khi thư được mở",
 	"compose.trackOpensOff": "Tắt xác nhận đã đọc",
 	"compose.deleteDraft": "Xóa thư nháp",
+	"editor.leftToRight": "Văn bản từ trái sang phải",
+	"editor.rightToLeft": "Văn bản từ phải sang trái",
 	"editor.bold": "In đậm (⌘B)",
 	"editor.italic": "In nghiêng (⌘I)",
 	"editor.underline": "Gạch chân (⌘U)",

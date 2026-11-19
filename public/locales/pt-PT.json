@@ -308,6 +308,8 @@
 	"compose.trackOpensOn": "Confirmação de leitura ativada: verá quando a mensagem for aberta",
 	"compose.trackOpensOff": "Confirmação de leitura desativada",
 	"compose.deleteDraft": "Eliminar rascunho",
+	"editor.leftToRight": "Texto da esquerda para a direita",
+	"editor.rightToLeft": "Texto da direita para a esquerda",
 	"editor.bold": "Negrito (⌘B)",
 	"editor.italic": "Itálico (⌘I)",
 	"editor.underline": "Sublinhado (⌘U)",

@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "پڑھنے کی رسید آن: آپ دیکھیں گے کہ پیغام کب کھولا گیا",
 	"compose.trackOpensOff": "پڑھنے کی رسید بند",
 	"compose.deleteDraft": "مسودہ حذف کریں",
+	"editor.leftToRight": "بائیں سے دائیں متن",
+	"editor.rightToLeft": "دائیں سے بائیں متن",
 	"editor.bold": "نمایاں (⌘B)",
 	"editor.italic": "ترچھا (⌘I)",
 	"editor.underline": "خط کشیدہ (⌘U)",

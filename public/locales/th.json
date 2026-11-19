@@ -302,6 +302,8 @@
 	"compose.trackOpensOn": "เปิดการแจ้งเตือนการอ่าน: คุณจะเห็นเมื่อข้อความถูกเปิด",
 	"compose.trackOpensOff": "ปิดการแจ้งเตือนการอ่าน",
 	"compose.deleteDraft": "ลบแบบร่าง",
+	"editor.leftToRight": "ข้อความจากซ้ายไปขวา",
+	"editor.rightToLeft": "ข้อความจากขวาไปซ้าย",
 	"editor.bold": "ตัวหนา (⌘B)",
 	"editor.italic": "ตัวเอียง (⌘I)",
 	"editor.underline": "ขีดเส้นใต้ (⌘U)",

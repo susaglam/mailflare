@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "Rasidin karantawa a kunne: za ku ga lokacin da aka buɗe saƙon",
 	"compose.trackOpensOff": "Rasidin karantawa a kashe",
 	"compose.deleteDraft": "Share daftari",
+	"editor.leftToRight": "Rubutu daga hagu zuwa dama",
+	"editor.rightToLeft": "Rubutu daga dama zuwa hagu",
 	"editor.bold": "Mai kauri (⌘B)",
 	"editor.italic": "Mai karkata (⌘I)",
 	"editor.underline": "Layi a ƙasa (⌘U)",

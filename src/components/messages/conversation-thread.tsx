@@ -223,7 +223,7 @@ export function ConversationMessageCard({
 								{expanded && recipients && <span className="text-xs font-normal text-neutral-500">{t("thread.to", { recipients })}</span>}
 							</div>
 							{!expanded && (
-								<span className={clsx(!locallyRead ? "font-semibold" : "text-neutral-500", "block truncate text-[13px]")}>{message.snippet || t("thread.noPreview")}</span>
+								<span className={clsx(!locallyRead ? "font-semibold" : "text-neutral-500", "block truncate text-[13px]")}><bdi>{message.snippet || t("thread.noPreview")}</bdi></span>
 							)}
 							{!expanded && <SenderCheckBadge message={message} />}
 						</span>
@@ -266,7 +266,7 @@ export function ConversationMessageCard({
 						{body.html ? (
 							<EmailHtmlRenderer html={body.html} autoAllowRemote={remote.autoAllow} onAllowRemote={remote.allowSender} />
 						) : (
-							<pre className="whitespace-pre-wrap font-sans text-sm text-neutral-900">{body.text}</pre>
+							<pre className="whitespace-pre-wrap font-sans text-sm text-neutral-900 [unicode-bidi:plaintext] text-start">{body.text}</pre>
 						)}
 						{body.quotedHtml && <QuotedEmailToggle html={body.quotedHtml} autoAllowRemote={remote.autoAllow} onAllowRemote={remote.allowSender} />}
 						{attachments.length > 0 && (

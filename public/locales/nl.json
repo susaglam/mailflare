@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "Leesbevestiging aan: je ziet wanneer het bericht wordt geopend",
 	"compose.trackOpensOff": "Leesbevestiging uit",
 	"compose.deleteDraft": "Concept verwijderen",
+	"editor.leftToRight": "Tekst van links naar rechts",
+	"editor.rightToLeft": "Tekst van rechts naar links",
 	"editor.bold": "Vet (⌘B)",
 	"editor.italic": "Cursief (⌘I)",
 	"editor.underline": "Onderstrepen (⌘U)",

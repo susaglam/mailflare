@@ -313,6 +313,8 @@
 	"compose.trackOpensOn": "Відстеження ввімкнено: ви побачите, коли лист відкриють",
 	"compose.trackOpensOff": "Відстеження вимкнено",
 	"compose.deleteDraft": "Видалити чернетку",
+	"editor.leftToRight": "Текст зліва направо",
+	"editor.rightToLeft": "Текст справа наліво",
 	"editor.bold": "Жирний (⌘B)",
 	"editor.italic": "Курсив (⌘I)",
 	"editor.underline": "Підкреслений (⌘U)",

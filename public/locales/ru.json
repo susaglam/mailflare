@@ -313,6 +313,8 @@
 	"compose.trackOpensOn": "Отслеживание включено: вы увидите, когда письмо откроют",
 	"compose.trackOpensOff": "Отслеживание выключено",
 	"compose.deleteDraft": "Удалить черновик",
+	"editor.leftToRight": "Текст слева направо",
+	"editor.rightToLeft": "Текст справа налево",
 	"editor.bold": "Жирный (⌘B)",
 	"editor.italic": "Курсив (⌘I)",
 	"editor.underline": "Подчёркнутый (⌘U)",

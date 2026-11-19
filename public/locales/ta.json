@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "படித்த ரசீது இயக்கத்தில்: செய்தி எப்போது திறக்கப்பட்டது என்பதைப் பார்ப்பீர்கள்",
 	"compose.trackOpensOff": "படித்த ரசீது முடக்கத்தில்",
 	"compose.deleteDraft": "வரைவை நீக்கு",
+	"editor.leftToRight": "இடமிருந்து வலமாக எழுதுக",
+	"editor.rightToLeft": "வலமிருந்து இடமாக எழுதுக",
 	"editor.bold": "தடித்த எழுத்து (⌘B)",
 	"editor.italic": "சாய்வு எழுத்து (⌘I)",
 	"editor.underline": "அடிக்கோடு (⌘U)",

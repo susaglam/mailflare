@@ -241,10 +241,10 @@ function MessageListRowComponent({
 						className={`mt-1 block truncate text-sm ${unread ? "font-semibold text-neutral-900" : "text-neutral-700"
 							}`}
 					>
-						{message.subject ?? t("list.noSubject")}
+						<bdi>{message.subject ?? t("list.noSubject")}</bdi>
 					</span>
 					<span className="mt-0.5 block truncate text-xs leading-5 text-neutral-500">
-						{preview}
+						<bdi>{preview}</bdi>
 					</span>
 				</Link>
 				{showCompactRowActions && supportsRowActions(config.folder) && message.direction === "inbound" && (
@@ -332,9 +332,9 @@ function MessageListRowComponent({
 					className="min-w-0 truncate focus-visible:outline-none after:absolute after:inset-0"
 				>
 					<span className={unread ? "font-semibold text-neutral-900" : ""}>
-						{rowMessage.subject ?? t("list.noSubject")}
+						<bdi>{rowMessage.subject ?? t("list.noSubject")}</bdi>
 					</span>
-					<span className="text-neutral-500"> - {getMessagePreview(rowMessage, config.folder, t)}</span>
+					<span className="text-neutral-500"> - <bdi>{getMessagePreview(rowMessage, config.folder, t)}</bdi></span>
 				</Link>
 			</span>
 			<time

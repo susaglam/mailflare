@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "කියවූ බවට රිසිට්පත ක්‍රියාත්මකයි: පණිවිඩය විවෘත කළ විට ඔබට පෙනේ",
 	"compose.trackOpensOff": "කියවූ බවට රිසිට්පත අක්‍රියයි",
 	"compose.deleteDraft": "කෙටුම්පත මකන්න",
+	"editor.leftToRight": "වමේ සිට දකුණට පෙළ",
+	"editor.rightToLeft": "දකුණේ සිට වමට පෙළ",
 	"editor.bold": "තද (⌘B)",
 	"editor.italic": "ඇල (⌘I)",
 	"editor.underline": "යටින් ඉර (⌘U)",

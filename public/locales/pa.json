@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "ਪੜ੍ਹਨ ਦੀ ਰਸੀਦ ਚਾਲੂ: ਤੁਸੀਂ ਦੇਖੋਗੇ ਕਿ ਸੁਨੇਹਾ ਕਦੋਂ ਖੋਲ੍ਹਿਆ ਗਿਆ",
 	"compose.trackOpensOff": "ਪੜ੍ਹਨ ਦੀ ਰਸੀਦ ਬੰਦ",
 	"compose.deleteDraft": "ਡਰਾਫਟ ਮਿਟਾਓ",
+	"editor.leftToRight": "ਖੱਬੇ ਤੋਂ ਸੱਜੇ ਲਿਖਤ",
+	"editor.rightToLeft": "ਸੱਜੇ ਤੋਂ ਖੱਬੇ ਲਿਖਤ",
 	"editor.bold": "ਗੂੜ੍ਹਾ (⌘B)",
 	"editor.italic": "ਇਟੈਲਿਕ (⌘I)",
 	"editor.underline": "ਹੇਠ ਲਕੀਰ (⌘U)",

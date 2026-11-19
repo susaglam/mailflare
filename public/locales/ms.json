@@ -302,6 +302,8 @@
 	"compose.trackOpensOn": "Resit baca dihidupkan: anda akan melihat bila mesej dibuka",
 	"compose.trackOpensOff": "Resit baca dimatikan",
 	"compose.deleteDraft": "Padam draf",
+	"editor.leftToRight": "Teks dari kiri ke kanan",
+	"editor.rightToLeft": "Teks dari kanan ke kiri",
 	"editor.bold": "Tebal (⌘B)",
 	"editor.italic": "Condong (⌘I)",
 	"editor.underline": "Garis bawah (⌘U)",

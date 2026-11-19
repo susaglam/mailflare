@@ -298,6 +298,8 @@
 	"compose.trackOpensOn": "已读回执已开启：你将看到邮件何时被打开",
 	"compose.trackOpensOff": "已读回执已关闭",
 	"compose.deleteDraft": "删除草稿",
+	"editor.leftToRight": "从左向右书写",
+	"editor.rightToLeft": "从右向左书写",
 	"editor.bold": "加粗 (⌘B)",
 	"editor.italic": "斜体 (⌘I)",
 	"editor.underline": "下划线 (⌘U)",

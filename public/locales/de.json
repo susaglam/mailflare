@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "Lesebestätigung an: Sie sehen, wann die Nachricht geöffnet wird",
 	"compose.trackOpensOff": "Lesebestätigung aus",
 	"compose.deleteDraft": "Entwurf löschen",
+	"editor.leftToRight": "Text von links nach rechts",
+	"editor.rightToLeft": "Text von rechts nach links",
 	"editor.bold": "Fett (⌘B)",
 	"editor.italic": "Kursiv (⌘I)",
 	"editor.underline": "Unterstrichen (⌘U)",

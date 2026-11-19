@@ -354,7 +354,7 @@ function MessageDetailContent({ messageId }: { messageId: string }) {
 
     <div ref={scrollRef} onScroll={handleScroll} className="h-full overflow-y-auto overscroll-contain scrollbar-gutter-stable flex-1 min-h-0">
       <h1 className={clsx("sm:pl-[78px] px-4 pb-2 pt-2 text-2xl text-neutral-900 sm:pr-6")} title={message.subject ?? t("list.noSubject")}>
-        {message.subject ?? t("list.noSubject")}
+        <bdi>{message.subject ?? t("list.noSubject")}</bdi>
       </h1>
       <MessageInviteCard key={message.id} messageId={message.id} hasCalendarAttachment={!!findInviteAttachment(attachments)} className={clsx("sm:ml-[78px] mx-4 mb-3 sm:mr-6")} />
       <ConversationNotes
@@ -487,7 +487,7 @@ function MessageDetailContent({ messageId }: { messageId: string }) {
             ) : htmlBody ? (
               <EmailHtmlRenderer key={message.id} className="mx-auto" html={htmlBody} autoAllowRemote={remote.autoAllow} onAllowRemote={remote.allowSender} />
             ) : (
-              <pre className="whitespace-pre-wrap text-sm text mx-auto">
+              <pre className="whitespace-pre-wrap text-sm text mx-auto [unicode-bidi:plaintext] text-start">
                 {cloudAttachmentResult.content}
               </pre>
             )}

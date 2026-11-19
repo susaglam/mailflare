@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "વાંચન રસીદ ચાલુ: સંદેશ ક્યારે ખોલાયો તે તમે જોશો",
 	"compose.trackOpensOff": "વાંચન રસીદ બંધ",
 	"compose.deleteDraft": "ડ્રાફ્ટ કાઢી નાખો",
+	"editor.leftToRight": "ડાબેથી જમણે લખાણ",
+	"editor.rightToLeft": "જમણેથી ડાબે લખાણ",
 	"editor.bold": "બોલ્ડ (⌘B)",
 	"editor.italic": "ઇટાલિક (⌘I)",
 	"editor.underline": "રેખાંકિત (⌘U)",

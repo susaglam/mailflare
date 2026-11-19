@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "पठन रसीद चालू: आप देखेंगे कि संदेश कब खोला गया",
 	"compose.trackOpensOff": "पठन रसीद बंद",
 	"compose.deleteDraft": "ड्राफ़्ट हटाएँ",
+	"editor.leftToRight": "बाएँ से दाएँ पाठ",
+	"editor.rightToLeft": "दाएँ से बाएँ पाठ",
 	"editor.bold": "बोल्ड (⌘B)",
 	"editor.italic": "इटैलिक (⌘I)",
 	"editor.underline": "रेखांकित (⌘U)",

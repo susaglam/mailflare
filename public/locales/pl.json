@@ -313,6 +313,8 @@
 	"compose.trackOpensOn": "Potwierdzenie odczytu włączone: zobaczysz, kiedy wiadomość zostanie otwarta",
 	"compose.trackOpensOff": "Potwierdzenie odczytu wyłączone",
 	"compose.deleteDraft": "Usuń wersję roboczą",
+	"editor.leftToRight": "Tekst od lewej do prawej",
+	"editor.rightToLeft": "Tekst od prawej do lewej",
 	"editor.bold": "Pogrubienie (⌘B)",
 	"editor.italic": "Kursywa (⌘I)",
 	"editor.underline": "Podkreślenie (⌘U)",

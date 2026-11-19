@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "చదివిన రసీదు ఆన్: సందేశం ఎప్పుడు తెరవబడిందో మీరు చూస్తారు",
 	"compose.trackOpensOff": "చదివిన రసీదు ఆఫ్",
 	"compose.deleteDraft": "డ్రాఫ్ట్‌ను తొలగించండి",
+	"editor.leftToRight": "ఎడమ నుండి కుడికి వచనం",
+	"editor.rightToLeft": "కుడి నుండి ఎడమకు వచనం",
 	"editor.bold": "బోల్డ్ (⌘B)",
 	"editor.italic": "ఇటాలిక్ (⌘I)",
 	"editor.underline": "అండర్‌లైన్ (⌘U)",

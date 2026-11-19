@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "Risiti ya kusoma imewashwa: utaona ujumbe ulipofunguliwa",
 	"compose.trackOpensOff": "Risiti ya kusoma imezimwa",
 	"compose.deleteDraft": "Futa rasimu",
+	"editor.leftToRight": "Maandishi kutoka kushoto kwenda kulia",
+	"editor.rightToLeft": "Maandishi kutoka kulia kwenda kushoto",
 	"editor.bold": "Herufi nzito (⌘B)",
 	"editor.italic": "Italiki (⌘I)",
 	"editor.underline": "Mstari chini (⌘U)",

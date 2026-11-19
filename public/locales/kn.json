@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "ಓದಿದ ರಸೀದಿ ಆನ್: ಸಂದೇಶ ಯಾವಾಗ ತೆರೆಯಲಾಯಿತು ಎಂದು ನೀವು ನೋಡುತ್ತೀರಿ",
 	"compose.trackOpensOff": "ಓದಿದ ರಸೀದಿ ಆಫ್",
 	"compose.deleteDraft": "ಕರಡನ್ನು ಅಳಿಸಿ",
+	"editor.leftToRight": "ಎಡದಿಂದ ಬಲಕ್ಕೆ ಪಠ್ಯ",
+	"editor.rightToLeft": "ಬಲದಿಂದ ಎಡಕ್ಕೆ ಪಠ್ಯ",
 	"editor.bold": "ದಪ್ಪ (⌘B)",
 	"editor.italic": "ಇಟಾಲಿಕ್ (⌘I)",
 	"editor.underline": "ಅಂಡರ್‌ಲೈನ್ (⌘U)",

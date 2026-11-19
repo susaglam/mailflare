@@ -33,6 +33,7 @@ import { DELIVERY_WAIT_MS, SCHEDULED_NOTICE_MS, SENT_NOTICE_MS, resolveSendNotic
 import type { SendNoticeParts, SendResult } from "./send-notice-utils";
 import {
 	applyMailboxSignatureHtml,
+	applyOutgoingTextDirection,
 	hasMeaningfulHtml,
 	htmlToPlainText,
 	joinQuotedHtml,
@@ -361,7 +362,7 @@ export function ComposeForm({
 		await saveQueue.current;
 		const currentDraftId = draftIdRef.current;
 		const unsentAttachments = attachments.filter((attachment) => !uploadedFiles.current.has(attachment.file));
-		const fullHtml = joinQuotedHtml(html, quotedHtml);
+		const fullHtml = joinQuotedHtml(applyOutgoingTextDirection(html), quotedHtml);
 		if (draftId && agentRevision !== null) {
 			try {
 				if (saveTimer.current) clearTimeout(saveTimer.current);
@@ -910,6 +911,7 @@ export function ComposeForm({
 					<Input
 						id={`${mode}-subject`}
 						value={subject}
+						dir="auto"
 						onChange={(event) => setSubject(event.target.value)}
 						placeholder={t("compose.subject")}
 						required

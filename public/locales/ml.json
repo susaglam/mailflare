@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "വായന രസീത് ഓൺ: സന്ദേശം എപ്പോൾ തുറന്നുവെന്ന് നിങ്ങൾക്ക് കാണാം",
 	"compose.trackOpensOff": "വായന രസീത് ഓഫ്",
 	"compose.deleteDraft": "കരട് ഇല്ലാതാക്കുക",
+	"editor.leftToRight": "ഇടത്തുനിന്ന് വലത്തോട്ടുള്ള എഴുത്ത്",
+	"editor.rightToLeft": "വലത്തുനിന്ന് ഇടത്തോട്ടുള്ള എഴുത്ത്",
 	"editor.bold": "ബോൾഡ് (⌘B)",
 	"editor.italic": "ഇറ്റാലിക് (⌘I)",
 	"editor.underline": "അടിവരയിടുക (⌘U)",

@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "वाचन पावती चालू: संदेश कधी उघडला ते तुम्हाला दिसेल",
 	"compose.trackOpensOff": "वाचन पावती बंद",
 	"compose.deleteDraft": "मसुदा हटवा",
+	"editor.leftToRight": "डावीकडून उजवीकडे मजकूर",
+	"editor.rightToLeft": "उजवीकडून डावीकडे मजकूर",
 	"editor.bold": "ठळक (⌘B)",
 	"editor.italic": "तिरकस (⌘I)",
 	"editor.underline": "अधोरेखित (⌘U)",

@@ -298,6 +298,8 @@
 	"compose.trackOpensOn": "開封確認オン: メッセージが開かれた日時を確認できます",
 	"compose.trackOpensOff": "開封確認オフ",
 	"compose.deleteDraft": "下書きを削除",
+	"editor.leftToRight": "左から右へ書く",
+	"editor.rightToLeft": "右から左へ書く",
 	"editor.bold": "太字 (⌘B)",
 	"editor.italic": "斜体 (⌘I)",
 	"editor.underline": "下線 (⌘U)",

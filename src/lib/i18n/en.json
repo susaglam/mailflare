@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "Read receipt on: you'll see when the message is opened",
 	"compose.trackOpensOff": "Read receipt off",
 	"compose.deleteDraft": "Delete draft",
+	"editor.leftToRight": "Left-to-right text",
+	"editor.rightToLeft": "Right-to-left text",
 	"editor.bold": "Bold (⌘B)",
 	"editor.italic": "Italic (⌘I)",
 	"editor.underline": "Underline (⌘U)",

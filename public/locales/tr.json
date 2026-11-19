@@ -301,6 +301,8 @@
 	"compose.trackOpensOn": "Okundu bilgisi açık: iletinin ne zaman açıldığını göreceksiniz",
 	"compose.trackOpensOff": "Okundu bilgisi kapalı",
 	"compose.deleteDraft": "Taslağı sil",
+	"editor.leftToRight": "Soldan sağa yaz",
+	"editor.rightToLeft": "Sağdan sola yaz",
 	"editor.bold": "Kalın (⌘B)",
 	"editor.italic": "İtalik (⌘I)",
 	"editor.underline": "Altı çizili (⌘U)",

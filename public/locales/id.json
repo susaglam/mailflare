@@ -298,6 +298,8 @@
 	"compose.trackOpensOn": "Tanda terbaca aktif: Anda akan melihat kapan pesan dibuka",
 	"compose.trackOpensOff": "Tanda terbaca nonaktif",
 	"compose.deleteDraft": "Hapus draf",
+	"editor.leftToRight": "Teks dari kiri ke kanan",
+	"editor.rightToLeft": "Teks dari kanan ke kiri",
 	"editor.bold": "Tebal (⌘B)",
 	"editor.italic": "Miring (⌘I)",
 	"editor.underline": "Garis bawah (⌘U)",

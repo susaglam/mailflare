@@ -308,6 +308,8 @@
 	"compose.trackOpensOn": "Accusé de lecture activé : vous verrez quand le message est ouvert",
 	"compose.trackOpensOff": "Accusé de lecture désactivé",
 	"compose.deleteDraft": "Supprimer le brouillon",
+	"editor.leftToRight": "Texte de gauche à droite",
+	"editor.rightToLeft": "Texte de droite à gauche",
 	"editor.bold": "Gras (⌘B)",
 	"editor.italic": "Italique (⌘I)",
 	"editor.underline": "Souligné (⌘U)",

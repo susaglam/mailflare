@@ -303,6 +303,8 @@
 	"compose.trackOpensOn": "رسید خواندن روشن است: می‌بینید پیام چه زمانی باز شد",
 	"compose.trackOpensOff": "رسید خواندن خاموش است",
 	"compose.deleteDraft": "حذف پیش‌نویس",
+	"editor.leftToRight": "متن چپ به راست",
+	"editor.rightToLeft": "متن راست به چپ",
 	"editor.bold": "پررنگ (⌘B)",
 	"editor.italic": "مورب (⌘I)",
 	"editor.underline": "زیرخط (⌘U)",
